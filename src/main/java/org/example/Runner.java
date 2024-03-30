@@ -21,6 +21,11 @@ public class Runner {
         calculateArguments(-4,-6,44,"Both If checked and z - skipped, x<0, y <0, z>50");
         calculateArguments(-47,-12,-21,"Both If checked and z - skipped, x<0, y <0, z<50 - может исчерпывающе");
         calculateArguments(7,-3,60,"First If skipped, second If checked and z - skipped, x>0, y <10, z>50");
+        calculateArguments(1,9,51,"First If skipped, second If checked, x>0, y <10, z>50");
+        calculateArguments(15,21,72,"First If skipped, second If checked, x>0, y >10, z>50");
+        calculateArguments(1,62,102,"First If skipped, second If skipped, x>0, y >10, z<50");
+        calculateArguments(8,-14,62,"First If skipped, second If checked, x>0, y <0, z>50");
+        calculateArguments(1,-1,51,"First If skipped, second If checked, x>0, y <0, z<50");
     }
 
 }
