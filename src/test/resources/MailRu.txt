@@ -1,0 +1,40 @@
+Лого
+//img[@class='ph-logo__img svelte-18tlzaw']
+//a[@class='ph-logo svelte-18tlzaw']/img
+
+Облако
+//a[@class='ph-project__link svelte-1sxvb4v' and text()='Облако']
+
+Войти большая кнопка
+//button[contains(@class,'resplash-btn_mailbox-big')]
+//button[contains(text(),'Войти')]
+
+Создать почту
+//a[contains(@class,'resplash-btn_mailbox-big')]
+
+Градусы
+//span[contains(@class,'weather__temp')]
+//div[@class='widget__container']//span[@class='weather__temp cea-fefe-fswwb']
+
+Значек подробнее
+//a[contains(@class,'weather__arrow ')]
+
+Строка поиска
+//input[@class='arrow__input mini-suggest__input']
+//input[@role='combobox']
+
+Леди
+//a[contains(text(),'Леди')]
+//a[@href='//lady.mail.ru/']
+
+Найти
+//button[@type='submit' and contains(text(),'Найти')]
+//button[@data-testid='search-button']
+
+Регистрация
+//a[contains(text(),'Регистрация')]
+//a[@class='ph-project ph-project__register svelte-1au561b']
+
+Войти маленькая
+//button[@class='ph-login svelte-1au561b']
+//button[@class='ph-login svelte-1au561b' and text()='Войти']

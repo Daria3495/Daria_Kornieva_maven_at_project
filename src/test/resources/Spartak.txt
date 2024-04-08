@@ -1,0 +1,48 @@
+Лого Спартака
+//img[@alt="логотип Спартак"]
+//a[@class=“header_logo_img”]/img
+
+Каталог продукции -> Импрессо
+//*[@class='main-nav']//a[text()='Импрессо']
+//*[@class='main-nav']//a[@href='/products/Impresso/']
+
+
+Информация для партнеров
+//a[@href='/partners/' and @class='has_child']/span[text()='Информация для партнеров']
+
+
+Лупа
+//i[@class='search fa search-btn lupa']
+
+Глаз
+//span[@class='header__eye']//img
+//a[@href='/?special_version=Y']/img
+
+Активный русский язык
+//a[@class='header__lang__item header__lang__item_ru active']
+//a[contains(@class, 'active') and contains(@class, 'item_ru')]
+
+Неактивный китайский
+//a[@href='/cn/']
+//a[contains(text(),'Ch')]
+
+Скачать каталог
+//a[@class='download-catalog']
+//a[contains(@class,'download-catalog')]
+
+Паддинг 2
+//ol[@class='flex-control-nav flex-control-paging']//a[contains(text(),2)]
+
+
+Стрелка
+//a[@class='flex-next']
+//li[@class='flex-nav-next']/a
+
+Телега иконка
+//div[@class='top_slider_wrapp']//a[@href='https://t.me/kfspartaklive']
+//div[@class='top_slider_wrapp']//img[contains(@src,'Tg')]
+
+
+Ютуб иконка
+//div[@class='top_slider_wrapp']//a[@href='https://www.youtube.com/channel/UC2xYusMBxs4XkwoPotvTw4A']
+//div[@class='top_slider_wrapp']//img[contains(@src,'youtube')]
