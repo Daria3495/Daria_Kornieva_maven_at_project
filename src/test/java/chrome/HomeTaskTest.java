@@ -17,19 +17,22 @@ public class HomeTaskTest {
 
         driver.manage().window().maximize();
         driver.get("https://www.google.com/?hl=en");
-        waitForElementPresentsAndClick(driver, By.xpath("//button[contains(.,'Reject')]"));
+        waitForElementPresents(driver, By.xpath("//button[contains(.,'Reject')]")).click();
         WebElement searchField = driver.findElement(By.xpath("//textarea[@title='Search']"));
         searchField.click();
         searchField.sendKeys("погода минск");
         searchField.submit();
-        waitForElementPresentsAndClick(driver, By.cssSelector("[data-wob-di='1']"));
-        waitForElementPresentsAndClick(driver, By.xpath("(//span[contains(.,'13:00')])[2]"));
-        System.out.println(driver.findElement(By.xpath("//span[@id='wob_tm']")));
+        waitForElementPresents(driver, By.cssSelector("[data-wob-di='1']")).click();
+        String dayOfWeek = driver.findElement(By.cssSelector("[role=heading] > #wob_dts")).getText();
+        WebElement dayElement = waitForElementPresents(driver,
+                By.cssSelector("text[aria-label $= \"Celsius " + dayOfWeek + " 12:00\"]"));
+        String ariaLabelValue = dayElement.getAttribute("aria-label");
+        System.out.println(ariaLabelValue.substring(0, ariaLabelValue.indexOf("Celsius")));
         driver.quit();
     }
 
-    private static void waitForElementPresentsAndClick(WebDriver driver, By selector) {
+    private static WebElement waitForElementPresents(WebDriver driver, By selector) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        wait.until(ExpectedConditions.presenceOfElementLocated(selector)).click();
+        return wait.until(ExpectedConditions.presenceOfElementLocated(selector));
     }
 }
