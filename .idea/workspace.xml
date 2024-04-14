@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1a03039-f35f-4824-8f4f-6f0921322078" name="Changes" comment="updated workspace">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotelScreen.png" beforeDir="false" afterPath="$PROJECT_DIR$/hotelScreen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jUnit/ChangeElementColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jUnit/ChangeElementColorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +51,8 @@
     "Application.SeleniumClassworkTest.executor": "Run",
     "Application.SeleniumTest.executor": "Run",
     "JUnit.ChangeElementColor.executor": "Run",
+    "JUnit.ParisBooking.executor": "Run",
+    "JUnit.PragueBookingXpathTest.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -65,26 +68,13 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ChangeElementColor">
+  <component name="RunManager" selected="JUnit.PragueBookingXpathTest">
     <configuration name="HomeTaskTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chrome.HomeTaskTest" />
       <module name="Daria_Kornieva_maven_at_project" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="chrome.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Runner" />
-      <module name="Daria_Kornieva_maven_at_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,7 +95,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChangeElementColor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChangeElementColorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Daria_Kornieva_maven_at_project" />
       <extension name="coverage">
         <pattern>
@@ -114,7 +104,37 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="jUnit" />
-      <option name="MAIN_CLASS_NAME" value="jUnit.ChangeElementColor" />
+      <option name="MAIN_CLASS_NAME" value="jUnit.ChangeElementColorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParisBookingXpathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Daria_Kornieva_maven_at_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jUnit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="jUnit" />
+      <option name="MAIN_CLASS_NAME" value="jUnit.ParisBookingXpathTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PragueBookingXpathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Daria_Kornieva_maven_at_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jUnit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="jUnit" />
+      <option name="MAIN_CLASS_NAME" value="jUnit.PragueBookingXpathTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -122,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChangeElementColor" />
+        <item itemvalue="JUnit.PragueBookingXpathTest" />
+        <item itemvalue="JUnit.ParisBookingXpathTest" />
+        <item itemvalue="JUnit.ChangeElementColorTest" />
         <item itemvalue="Application.HomeTaskTest" />
         <item itemvalue="Application.SeleniumClassworkTest" />
-        <item itemvalue="Application.Runner" />
-        <item itemvalue="Application.HomeTaskTest" />
       </list>
     </recent_temporary>
   </component>
