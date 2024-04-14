@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d1a03039-f35f-4824-8f4f-6f0921322078" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/chrome/HomeTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/chrome/HomeTaskTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="day16_classwork" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,42 +43,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BookingTest.executor": "Run",
-    "Application.HomeTaskTest.executor": "Run",
-    "Application.Runner.executor": "Run",
-    "Application.SeleniumClassworkTest.executor": "Run",
-    "Application.SeleniumTest.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "day17__classwork",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HomeTaskTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Runner.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SeleniumClassworkTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SeleniumTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BookingTest">
-    <configuration name="BookingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chrome.BookingTest" />
-      <module name="Daria_Kornieva_maven_at_project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="chrome.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.HomeTaskTest">
     <configuration name="HomeTaskTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chrome.HomeTaskTest" />
       <module name="Daria_Kornieva_maven_at_project" />
@@ -119,11 +106,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BookingTest" />
         <item itemvalue="Application.HomeTaskTest" />
         <item itemvalue="Application.SeleniumClassworkTest" />
         <item itemvalue="Application.Runner" />
         <item itemvalue="Application.HomeTaskTest" />
+        <item itemvalue="Application.SeleniumClassworkTest" />
       </list>
     </recent_temporary>
   </component>
