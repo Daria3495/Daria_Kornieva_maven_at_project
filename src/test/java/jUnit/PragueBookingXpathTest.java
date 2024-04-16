@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.NoSuchElementException;
 
 public class PragueBookingXpathTest {
@@ -36,10 +38,16 @@ public class PragueBookingXpathTest {
     public void findPragueFirstHotel() {
         driver.findElement(By.xpath("//input[@aria-label='Where are you going?']"))
                 .sendKeys("Prague");
-        //TODO добавить скип открытого окошка даты
+
+        driver.findElement(By.xpath("//button[@data-testid='date-display-field-start']"))
+                .click();
+        String startTravelDate = String.valueOf(LocalDate.now(ZoneId.systemDefault()).plusDays(1));
+        String endTravelDate = String.valueOf(LocalDate.now(ZoneId.systemDefault()).plusDays(8));
+        driver.findElement(By.xpath(String.format("//span[@data-date='%s']",startTravelDate))).click();
+        driver.findElement(By.xpath(String.format("//span[@data-date='%s']", endTravelDate))).click();
         driver.findElement(By.xpath("//span[contains(text(),'Search')]")).click();
 
-        WebElement reviewScore = driver.findElement(By.xpath("(//div[@data-filters-item='review_score:review_score=90']/*[@id=':r1u:']"));
+        WebElement reviewScore = driver.findElement(By.xpath("//div[@data-filters-item='review_score:review_score=90']/*[@id=':r2h:']"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", reviewScore);
         reviewScore.click();
         driver.findElement(By.xpath("(//div[@data-testid='property-card-container'])[1]//div[@data-testid='title']"))
