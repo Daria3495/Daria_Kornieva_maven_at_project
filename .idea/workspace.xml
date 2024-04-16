@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1a03039-f35f-4824-8f4f-6f0921322078" name="Changes" comment="">
+    <list default="true" id="d1a03039-f35f-4824-8f4f-6f0921322078" name="Changes" comment="updated workspace">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/chrome/HomeTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/chrome/HomeTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jUnit/ParisBookingXpathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jUnit/ParisBookingXpathTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jUnit/PragueBookingXpathTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jUnit/PragueBookingXpathTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="day16_classwork" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,74 +44,120 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HomeTaskTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Runner.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SeleniumClassworkTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SeleniumTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HomeTaskTest.executor": "Run",
+    "Application.Runner.executor": "Run",
+    "Application.SeleniumClassworkTest.executor": "Run",
+    "Application.SeleniumTest.executor": "Run",
+    "JUnit.ChangeElementColor.executor": "Run",
+    "JUnit.IndicatorTest.executor": "Run",
+    "JUnit.ParisBooking.executor": "Run",
+    "JUnit.ParisBookingXpathTest.executor": "Run",
+    "JUnit.ParisBookingXpathTest.findPaisHotelScore.executor": "Run",
+    "JUnit.PragueBookingXpathTest.executor": "Run",
+    "JUnit.TutorialTest.executor": "Run",
+    "JUnit.TutorialTest.interactionWithElementsWithKeyboard.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "day16__hometask",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HomeTaskTest">
-    <configuration name="HomeTaskTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chrome.HomeTaskTest" />
+  <component name="RunManager" selected="JUnit.ParisBookingXpathTest">
+    <configuration name="IndicatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Daria_Kornieva_maven_at_project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chrome.*" />
+          <option name="PATTERN" value="jUnit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="jUnit" />
+      <option name="MAIN_CLASS_NAME" value="jUnit.IndicatorTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Runner" />
+    <configuration name="ParisBookingXpathTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Daria_Kornieva_maven_at_project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="jUnit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="jUnit" />
+      <option name="MAIN_CLASS_NAME" value="jUnit.ParisBookingXpathTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SeleniumClassworkTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chrome.SeleniumClassworkTest" />
+    <configuration name="ParisBookingXpathTest.findPaisHotelScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Daria_Kornieva_maven_at_project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chrome.*" />
+          <option name="PATTERN" value="jUnit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="jUnit" />
+      <option name="MAIN_CLASS_NAME" value="jUnit.ParisBookingXpathTest" />
+      <option name="METHOD_NAME" value="findPaisHotelScore" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TutorialTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Daria_Kornieva_maven_at_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jUnit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="jUnit" />
+      <option name="MAIN_CLASS_NAME" value="jUnit.TutorialTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TutorialTest.interactionWithElementsWithKeyboard" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Daria_Kornieva_maven_at_project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jUnit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="jUnit" />
+      <option name="MAIN_CLASS_NAME" value="jUnit.TutorialTest" />
+      <option name="METHOD_NAME" value="interactionWithElementsWithKeyboard" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HomeTaskTest" />
-        <item itemvalue="Application.SeleniumClassworkTest" />
-        <item itemvalue="Application.Runner" />
-        <item itemvalue="Application.HomeTaskTest" />
-        <item itemvalue="Application.SeleniumClassworkTest" />
+        <item itemvalue="JUnit.ParisBookingXpathTest" />
+        <item itemvalue="JUnit.ParisBookingXpathTest.findPaisHotelScore" />
+        <item itemvalue="JUnit.TutorialTest" />
+        <item itemvalue="JUnit.TutorialTest.interactionWithElementsWithKeyboard" />
+        <item itemvalue="JUnit.IndicatorTest" />
       </list>
     </recent_temporary>
   </component>
