@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class IndicatorTest {
@@ -22,13 +23,9 @@ public class IndicatorTest {
         driver.get("https://booking.com");
         driver.findElement(By.id("onetrust-reject-all-handler")).click();
 
-        try {
-            WebElement signInAlert = driver.findElement(By.xpath("//button[@aria-label='Dismiss sign-in info.']"));
-            if (signInAlert.isDisplayed()) {
-                signInAlert.click();
-            }
-        } catch (NoSuchElementException e) {
-            System.out.println("Sign in alert was not displayed");
+        List<WebElement> signInAlert = driver.findElements(By.xpath("//button[@aria-label='Dismiss sign-in info.']"));
+        if (!signInAlert.isEmpty()) {
+            signInAlert.get(0).click();
         }
     }
 

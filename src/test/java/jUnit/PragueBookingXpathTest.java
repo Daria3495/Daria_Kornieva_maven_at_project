@@ -50,7 +50,7 @@ public class PragueBookingXpathTest {
         WebElement reviewScore = driver.findElement(By.xpath("//div[@data-filters-item='review_score:review_score=90']/*[@id=':r2h:']"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", reviewScore);
         reviewScore.click();
-        driver.findElement(By.xpath("(//div[@data-testid='property-card-container'])[1]//div[@data-testid='title']"))
+        driver.findElement(By.xpath("(//div[@data-testid='property-card-container'])[1]"))
                 .click();
         WebElement hotelScore = driver.findElement(By.xpath("//div[@data-testid='review-score-component']"));
         String scoreText = hotelScore.getText();
