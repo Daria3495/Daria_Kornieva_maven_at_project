@@ -1,6 +1,6 @@
 package automation.pages;
 
-import automation.driver.DriverCreator;
+import automation.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +10,7 @@ import java.util.List;
 
 public class BookingMainPage {
 
+    WebDriver driver = Driver.getWebDriver();
     public static final String CALENDAR_FIELD_XPATH = "//span[@data-date='%s']";
     private static final String WHERE_TO_GO_FIELD_XPATH = "//input[@aria-label='Where are you going?']";
     private static final String START_DATE_FIELD_XPATH = "//button[@data-testid='date-display-field-start']";
@@ -18,10 +19,8 @@ public class BookingMainPage {
     public static final String DONE_BUTTON = "//span[contains(text(),'Done')]";
     public static final String ADDTIONAL_FILTERS_BUTTON_XPATH = "//button[@data-testid='occupancy-config']";
     public static final String SEARCH_BUTTON_XPATH = "//span[contains(text(),'Search')]";
-    private WebDriver driver;
 
     public BookingMainPage() {
-        driver = DriverCreator.getDriver();
         driver.get("https://booking.com");
         driver.findElement(By.id("onetrust-reject-all-handler")).click();
 
@@ -55,23 +54,21 @@ public class BookingMainPage {
         }
     }
 
-    public void addRoomQuantity() {
-        driver.findElement(By.xpath(ROOM_QUANTITY_BUTTON_XPATH))
-                .click();
+    public void addRoomQuantity(int roomQuantity) {
+        for (int i = 0; i < roomQuantity; i++) {
+            driver.findElement(By.xpath(ROOM_QUANTITY_BUTTON_XPATH))
+                    .click();
+        }
     }
 
-    public void saveAdditionalConditions() {
+    public void clickDoneButton() {
         driver.findElement(By.xpath(DONE_BUTTON)).click();
     }
 
-    public void searchHotelWithChosenConditions() {
+    public void clickSearchButton() {
         driver.findElement(By.xpath(SEARCH_BUTTON_XPATH)).click();
     }
 
-    public BookingHotelsPage searchHotels() {
-        driver.findElement(By.xpath(SEARCH_BUTTON_XPATH)).click();
-        return new BookingHotelsPage();
-    }
 
 }
 

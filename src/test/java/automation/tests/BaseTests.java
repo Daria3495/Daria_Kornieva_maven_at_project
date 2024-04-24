@@ -1,6 +1,5 @@
 package automation.tests;
 
-import automation.driver.DriverCreator;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +12,7 @@ public class BaseTests {
 
     @Before
     public void initialize() {
-        driver = DriverCreator.getDriver();
+//        driver = Driver.getDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
     }

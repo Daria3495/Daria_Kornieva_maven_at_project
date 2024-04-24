@@ -1,11 +1,12 @@
 package automation.pages;
 
-import automation.driver.DriverCreator;
-import org.junit.Assert;
+import automation.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class BookingHotelsPage {
+
+    WebDriver driver = Driver.getWebDriver();
     public static final String SIX_REVIEW_SCORE_XPATH = "//div[@data-filters-item='review_score:review_score=60']/*[@id=':r1g:']";
 
     public static final String NINE_REVIEW_SCORE_XPATH = "//div[@data-filters-item='review_score:review_score=90']/*[@id=':r1d:']";
@@ -13,11 +14,12 @@ public class BookingHotelsPage {
     public static final String FROM_HIGH_TO_LOW_SORTING_OPTION_XPATH = "//span[contains(.,'Property rating (low to high)')]";
     public static final String REVIEW_SCORE_CARD_XPATH = "(//div[@data-testid='property-card-container']//div[@data-testid='review-score'])[1]";
     public static final String HOTEL_CARD_XPATH = "(//div[@data-testid='property-card-container'])[1]";
-    private WebDriver driver;
 
-    public BookingHotelsPage() {
-        driver = DriverCreator.getDriver();
+    public int getScore() {
+        return score;
     }
+
+    private int score;
 
     public void chooseSixHotelReviewScore() {
         driver.findElement(By.xpath(SIX_REVIEW_SCORE_XPATH)).click();
@@ -38,10 +40,10 @@ public class BookingHotelsPage {
         driver.findElement(By.xpath(FROM_HIGH_TO_LOW_SORTING_OPTION_XPATH)).click();
     }
 
-    public void findHotelReviewScore() {
+    public int findHotelReviewScore() {
         String scoreText = driver.findElement(By.xpath(REVIEW_SCORE_CARD_XPATH)).getText();
-        int score = Integer.parseInt(scoreText.substring(0, scoreText.indexOf('.')));
-        Assert.assertEquals("Hotel score is less than 6", true, score > 6);
+        score = scoreText.indexOf('.');
+        return score;
     }
 
     public void chooseHotelFromTheList() {
