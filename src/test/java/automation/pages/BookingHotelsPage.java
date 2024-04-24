@@ -7,9 +7,7 @@ import org.openqa.selenium.WebDriver;
 public class BookingHotelsPage {
 
     WebDriver driver = Driver.getWebDriver();
-    public static final String SIX_REVIEW_SCORE_XPATH = "//div[@data-filters-item='review_score:review_score=60']/*[@id=':r1g:']";
-
-    public static final String NINE_REVIEW_SCORE_XPATH = "//div[@data-filters-item='review_score:review_score=90']/*[@id=':r1d:']";
+    public static final String REVIEW_SCORE_XPATH = "//input[contains(@aria-label,' %s+:')]";
     public static final String SORTING_DROPDOWN_XPATH = "//button[@data-testid='sorters-dropdown-trigger']";
     public static final String FROM_HIGH_TO_LOW_SORTING_OPTION_XPATH = "//span[contains(.,'Property rating (low to high)')]";
     public static final String REVIEW_SCORE_CARD_XPATH = "(//div[@data-testid='property-card-container']//div[@data-testid='review-score'])[1]";
@@ -21,12 +19,9 @@ public class BookingHotelsPage {
 
     private int score;
 
-    public void chooseSixHotelReviewScore() {
-        driver.findElement(By.xpath(SIX_REVIEW_SCORE_XPATH)).click();
-    }
-
-    public void chooseNineHotelReviewScore() {
-        driver.findElement(By.xpath(NINE_REVIEW_SCORE_XPATH)).click();
+    public void chooseHotelReviewScore(int reviewNumber) {
+        String dynamicXpath = String.format(REVIEW_SCORE_XPATH, reviewNumber);
+        driver.findElement(By.xpath(dynamicXpath)).click();
     }
 
     public void openSortingDropDown() {

@@ -21,7 +21,7 @@ public class BookingTests extends BaseTests {
         mainPage.addRoomQuantity(1);
         mainPage.clickDoneButton();
         mainPage.clickSearchButton();
-        bookingHotelsPage.chooseSixHotelReviewScore();
+        bookingHotelsPage.chooseHotelReviewScore(6);
         bookingHotelsPage.openSortingDropDown();
         bookingHotelsPage.chooseSortingOption();
         bookingHotelsPage.findHotelReviewScore();
@@ -36,9 +36,10 @@ public class BookingTests extends BaseTests {
         mainPage.fillEndDateField(DateCreatorUtil.calculateEndDate(5));
         mainPage.clickSearchButton();
 
-        bookingHotelsPage.chooseNineHotelReviewScore();
+        bookingHotelsPage.chooseHotelReviewScore(9);
         bookingHotelsPage.chooseHotelFromTheList();
         bookingHotelsPage.findHotelReviewScore();
+
     }
 
 }
