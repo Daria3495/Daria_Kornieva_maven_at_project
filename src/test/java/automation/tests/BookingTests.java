@@ -1,7 +1,9 @@
 package automation.tests;
 
+import automation.driver.Driver;
 import automation.pages.BookingHotelsPage;
 import automation.pages.BookingMainPage;
+import automation.pages.BookingSeparateHotelPage;
 import automation.utils.DateCreatorUtil;
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,6 +12,8 @@ import org.junit.Test;
 public class BookingTests extends BaseTests {
     BookingMainPage mainPage = new BookingMainPage();
     BookingHotelsPage bookingHotelsPage = new BookingHotelsPage();
+    BookingSeparateHotelPage separateHotelPage = new BookingSeparateHotelPage();
+
     @Test
     public void bookHotelInParis() {
 
@@ -35,11 +39,32 @@ public class BookingTests extends BaseTests {
         mainPage.fillStartDateField(DateCreatorUtil.calculateStartDate(2));
         mainPage.fillEndDateField(DateCreatorUtil.calculateEndDate(5));
         mainPage.clickSearchButton();
-
         bookingHotelsPage.chooseHotelReviewScore(9);
         bookingHotelsPage.chooseHotelFromTheList();
-        bookingHotelsPage.findHotelReviewScore();
+        separateHotelPage.findHotelReviewScore();
+        Assert.assertEquals("Hotel score is less than 6", true, separateHotelPage.getScore() > 9);
+    }
 
+    //TODO сделать проверку на скриншот
+    @Test
+    public void makeScreenshotOfHotelCard() {
+        mainPage.enterValueToWhereToGoField("London");
+        mainPage.clickSearchButton();
+        bookingHotelsPage.findHotelInTheList(10);
+        bookingHotelsPage.highlightHotelCard();
+        Driver.makeScreenshot();
+    }
+
+    @Test
+    public void checkLanguageTooltip() {
+        mainPage.checkLanguageTooltip().getText();
+        Assert.assertEquals("Text is not 'Select your language'","Select your language" ,mainPage.checkLanguageTooltip().getText());
+    }
+
+    @Test
+    public void checkCurrencyTooltip() {
+        mainPage.checkCurrencyTooltip().getText();
+        Assert.assertEquals("Text is not 'Select your currency'","Select your currency" ,mainPage.checkCurrencyTooltip().getText());
     }
 
 }
