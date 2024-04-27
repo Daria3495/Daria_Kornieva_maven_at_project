@@ -42,7 +42,7 @@ public class BookingTests extends BaseTests {
         bookingHotelsPage.chooseHotelReviewScore(9);
         bookingHotelsPage.chooseHotelFromTheList();
         separateHotelPage.findHotelReviewScore();
-        Assert.assertEquals("Hotel score is less than 6", true, separateHotelPage.getScore() > 9);
+        Assert.assertEquals("Hotel score is less than 9", true, separateHotelPage.getScore() > 9);
     }
 
     //TODO сделать проверку на скриншот
