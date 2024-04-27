@@ -7,6 +7,7 @@ public class DateCreatorUtil {
 
     public static String calculateStartDate(int newStartDay) {
         String startTravelDate = String.valueOf(LocalDate.now(ZoneId.systemDefault()).plusDays(newStartDay));
+        System.out.println("Start travel date: " + startTravelDate);
         return startTravelDate;
     }
 

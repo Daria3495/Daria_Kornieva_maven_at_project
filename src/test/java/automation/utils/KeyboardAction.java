@@ -8,7 +8,8 @@ import org.openqa.selenium.interactions.Actions;
 
 public class KeyboardAction {
 
-//    public static void copyText(WebDriver element) {
+    //переделать методы
+//    public static void copyText(WebElement element) {
 //        WebDriver driver = Driver.getWebDriver();
 //
 //        Actions action = new Actions(driver);
