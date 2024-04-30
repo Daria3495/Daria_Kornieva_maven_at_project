@@ -2,19 +2,19 @@
 <suite name="MyTestSuite">
     <test name="Booking">
         <classes>
-            <class name=""/>
+            <class name="automation.tests.testng.BookingTestsTestNg"/>
         </classes>
     </test>
 
     <test name="Tutorial">
         <classes>
-            <class name=""/>
+            <class name="automation.tests.testng.TutorialTestsTestNg"/>
         </classes>
     </test>
 
     <test name="DemoQa">
         <classes>
-            <class name=""/>
+            <class name="automation.tests.testng.DemoQaTestNg"/>
         </classes>
     </test>
 </suite>

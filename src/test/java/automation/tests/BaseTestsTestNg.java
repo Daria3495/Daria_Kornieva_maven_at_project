@@ -1,17 +1,16 @@
 package automation.tests;
 
 import automation.driver.Driver;
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 
-import java.time.Duration;
-
-public class BaseTests {
+public class BaseTestsTestNg {
 
     protected WebDriver driver;
-    @After
+
+    @AfterTest
     public void closeDriver() {
-//        Driver.quitDriver();
+        Driver.quitDriver();
     }
 }

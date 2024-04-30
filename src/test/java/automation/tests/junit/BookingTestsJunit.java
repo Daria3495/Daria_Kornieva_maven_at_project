@@ -1,15 +1,16 @@
-package automation.tests;
+package automation.tests.junit;
 
 import automation.driver.Driver;
 import automation.pages.BookingHotelsPage;
 import automation.pages.BookingMainPage;
 import automation.pages.BookingSeparateHotelPage;
+import automation.tests.BaseTestsJunit;
 import automation.utils.DateCreatorUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
 
-public class BookingTests extends BaseTests {
+public class BookingTestsJunit extends BaseTestsJunit {
     BookingMainPage mainPage = new BookingMainPage();
     BookingHotelsPage bookingHotelsPage = new BookingHotelsPage();
     BookingSeparateHotelPage separateHotelPage = new BookingSeparateHotelPage();
