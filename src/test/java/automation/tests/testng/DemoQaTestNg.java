@@ -1,9 +1,10 @@
 package automation.tests.testng;
 
 import automation.pages.DemoQaPage;
+import automation.tests.BaseTestsTestNg;
 import org.junit.Test;
 
-public class DemoQaTestNg {
+public class DemoQaTestNg extends BaseTestsTestNg {
 
     DemoQaPage qaPage = new DemoQaPage();
 

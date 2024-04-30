@@ -1,6 +1,8 @@
 package automation.tests;
 
+import automation.driver.Driver;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 
 public class BaseTestsTestNg {
@@ -9,6 +11,6 @@ public class BaseTestsTestNg {
 
     @AfterTest
     public void closeDriver() {
-//        Driver.quitDriver();
+        Driver.quitDriver();
     }
 }
