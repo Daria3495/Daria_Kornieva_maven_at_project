@@ -5,11 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
 public class DemoQaPage {
 
-    private WebElement multiSelectorDropdown;
+
     public static final String VALUE_DROPDOWN_ID = "withOptGroup";
     public static final String GROUP_OPTION_XPATH = "//*[contains(text(),'Group %s, option %s')]";
     public static final String SELECT_ONE_DROPDOWN_ID = "selectOne";
@@ -21,29 +20,59 @@ public class DemoQaPage {
     public static final String SELECT_MENU_CONTAINER_ID = "selectMenuContainer";
     public static final String CARS_DROPDOWN_ID = "cars";
     public static final String CAR_XPATH = "//option[@value='%s']";
+    private WebElement multiSelectorDropdown;
+    private WebElement elementFirstDropdown;
+    private WebElement elementSelectOneDropdown;
+    private WebElement elementOldDropdown;
+    private WebElement elementCar;
+    private String textInFirstDropDown;
+    private String textInSelectOneDropdown;
+    private String textInOldDropdown;
+
+    private String textInCarDropdown;
+
     WebDriver driver = Driver.getWebDriver();
+
+    public String getTextInFirstDropDown() {
+        return textInFirstDropDown;
+    }
+    public String getTextInSelectOneDropdown() {
+        return textInSelectOneDropdown;
+    }
+    public String getTextInOldDropdown() {
+        return textInOldDropdown;
+    }
+    public String getTextInCarDropdown() {
+        return textInCarDropdown;
+    }
 
     public DemoQaPage() {
         driver.get("https://demoqa.com/select-menu");
     }
 
     public void chooseValueFromFirstDropDown(int groupNumber, int optionNumber) {
-        driver.findElement(By.id(VALUE_DROPDOWN_ID)).click();
+        elementFirstDropdown = driver.findElement(By.id(VALUE_DROPDOWN_ID));
+        elementFirstDropdown.click();
         String groupDynamicXpath = String.format(GROUP_OPTION_XPATH, groupNumber, optionNumber);
         driver.findElement(By.xpath(groupDynamicXpath)).click();
+        textInFirstDropDown = elementFirstDropdown.getText();
     }
 
     public void chooseValueFromSelectOneDropDown(String oneValue) {
-        driver.findElement(By.id(SELECT_ONE_DROPDOWN_ID)).click();
+        elementSelectOneDropdown = driver.findElement(By.id(SELECT_ONE_DROPDOWN_ID));
+        elementSelectOneDropdown.click();
         String oneDynamicXpath = String.format(SELECT_ONE_VALUE_XPATH, oneValue);
         driver.findElement(By.xpath(oneDynamicXpath)).click();
+        textInSelectOneDropdown = elementSelectOneDropdown.getText();
     }
 
     //TODO ен пропадает дропдаун, попробовать кликнуть в свободную эрию
     public void chooseValueFromOldSelectMenu(String color) {
-        driver.findElement(By.id(OLD_SELECT_MENU_DROPDOWN_ID)).click();
+        driver.findElement(By.id(OLD_SELECT_MENU_DROPDOWN_ID));
         String oldDynamicXpath = String.format(OLD_SELECT_MENU_VALUE_XPATH, color);
-        driver.findElement(By.xpath(oldDynamicXpath)).click();
+        elementOldDropdown = driver.findElement(By.xpath(oldDynamicXpath));
+        elementOldDropdown.click();
+        textInOldDropdown = elementOldDropdown.getText();
     }
 
     public void clickAnywhereToHideDropdown() {
@@ -69,7 +98,9 @@ public class DemoQaPage {
     public void chooseCarFromList(String car) {
         driver.findElement(By.id(CARS_DROPDOWN_ID));
         String carDynamicXpath = String.format(CAR_XPATH, car);
-        driver.findElement(By.xpath(carDynamicXpath)).click();
+        elementCar = driver.findElement(By.xpath(carDynamicXpath));
+        elementCar.click();
+        textInCarDropdown = elementCar.getText();
     }
 
 }

@@ -30,7 +30,7 @@ public class BookingTestsTestNg extends BaseTestsTestNg {
         bookingHotelsPage.openSortingDropDown();
         bookingHotelsPage.chooseSortingOption();
         bookingHotelsPage.findHotelReviewScore();
-        Assert.assertEquals(bookingHotelsPage.getScore() > 6, true,"Hotel score is less than 6");
+        Assert.assertEquals(bookingHotelsPage.getScore() >= 6.0, true,"Hotel score is less than 6");
     }
 
     @Test
@@ -42,8 +42,9 @@ public class BookingTestsTestNg extends BaseTestsTestNg {
         mainPage.clickSearchButton();
         bookingHotelsPage.chooseHotelReviewScore(9);
         bookingHotelsPage.chooseHotelFromTheList();
+        separateHotelPage.switchToAnotherTab();
         separateHotelPage.findHotelReviewScore();
-        Assert.assertEquals(separateHotelPage.getScore() > 9, true, "Hotel score is less than 9");
+        Assert.assertEquals(separateHotelPage.getScore() >= 9.0, true, "Hotel score is less than 9");
     }
 
     //TODO сделать проверку на скриншот

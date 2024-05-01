@@ -5,8 +5,6 @@ import automation.tests.BaseTestsJunit;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class DemoQaTestsJunit extends BaseTestsJunit {
 
     DemoQaPage qaPage = new DemoQaPage();
@@ -23,10 +21,12 @@ public class DemoQaTestsJunit extends BaseTestsJunit {
         qaPage.clickAnywhereToHideDropdown();
         qaPage.chooseCarFromList("opel");
 
-//        Assert.assertEquals("Incorrect value chosen from first dropdown", "Group 1, option 1", qaPage.getFirstDropDownValue());
-//        Assert.assertEquals("Incorrect value chosen from select one dropdown", "Mrs.", qaPage.getSelectOneDropDownValue());
-//        Assert.assertEquals("Incorrect value chosen from old select menu", "Yellow", qaPage.getOldSelectMenuValue());
+        Assert.assertEquals("Incorrect value chosen from first dropdown", " option Group 1, option 1, selected.\n" +
+                "Group 1, option 1", qaPage.getTextInFirstDropDown());
+        Assert.assertEquals("Incorrect value chosen from select one dropdown", " option Mrs., selected.\n" +
+                "Mrs.", qaPage.getTextInSelectOneDropdown());
+        Assert.assertEquals("Incorrect value chosen from old select menu", "Yellow", qaPage.getTextInOldDropdown());
 //        Assert.assertEquals("Incorrect color chosen from multi-select dropdown", "Black", qaPage.getMultiSelectDropdownValue());
-//        Assert.assertEquals("Incorrect car selected from list", "opel", qaPage.getSelectedCar());
+        Assert.assertEquals("Incorrect car selected from list", "Opel", qaPage.getTextInCarDropdown());
     }
 }

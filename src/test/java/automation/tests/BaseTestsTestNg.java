@@ -9,7 +9,7 @@ public class BaseTestsTestNg {
 
     protected WebDriver driver;
 
-    @AfterTest
+    @AfterClass
     public void closeDriver() {
         Driver.quitDriver();
     }

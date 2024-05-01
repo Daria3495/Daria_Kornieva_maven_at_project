@@ -30,7 +30,7 @@ public class BookingTestsJunit extends BaseTestsJunit {
         bookingHotelsPage.openSortingDropDown();
         bookingHotelsPage.chooseSortingOption();
         bookingHotelsPage.findHotelReviewScore();
-        Assert.assertEquals("Hotel score is less than 6", bookingHotelsPage.getScore() > 6.0, bookingHotelsPage.getScore());
+        Assert.assertEquals("Hotel score is less than 6", true, bookingHotelsPage.getScore() >= 6.0);
     }
 
     @Test
@@ -42,8 +42,9 @@ public class BookingTestsJunit extends BaseTestsJunit {
         mainPage.clickSearchButton();
         bookingHotelsPage.chooseHotelReviewScore(9);
         bookingHotelsPage.chooseHotelFromTheList();
+        separateHotelPage.switchToAnotherTab();
         separateHotelPage.findHotelReviewScore();
-        Assert.assertEquals("Hotel score is less than 9", true, separateHotelPage.getScore() > 9);
+        Assert.assertEquals("Hotel score is less than 9", true, separateHotelPage.getScore() >= 9.0);
     }
 
     //TODO сделать проверку на скриншот
