@@ -40,7 +40,7 @@ public class Driver {
             caps.setExperimentalOption("excludeSwitches",
                     Collections.singletonList("enable-automation"));
             driver = new ChromeDriver(caps);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             driver.manage().window().maximize();
         }
         return driver;

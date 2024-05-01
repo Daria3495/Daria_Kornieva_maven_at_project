@@ -2,9 +2,12 @@ package automation.pages;
 
 import automation.driver.Driver;
 import org.openqa.selenium.*;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.NoSuchElementException;
 
@@ -12,25 +15,37 @@ public class BookingHotelsPage {
     WebDriver driver = Driver.getWebDriver();
     public static final String HOTEL_CARD_IN_THE_LIST_XPATH = "(//div[@data-testid='property-card-container'])[%s]";
     public static final String REVIEW_SCORE_XPATH = "//input[contains(@aria-label,' %s+:')]";
-    public static final String SELECTED_REVIEW_TAB_XPATH = "//div[@class='a1d43fa1ac']/div/label/span";
+    public static final String SELECTED_REVIEW_TAB_CSS = "[data-testid='filter:review_score=%s0']";
     public static final String SORTING_DROPDOWN_XPATH = "//button[@data-testid='sorters-dropdown-trigger']";
     public static final String FROM_HIGH_TO_LOW_SORTING_OPTION_XPATH = "//span[contains(.,'Property rating (low to high)')]";
     public static final String REVIEW_SCORE_CARD_XPATH = "(//div[@data-testid='property-card-container']//div[@data-testid='review-score'])[1]";
     public static final String HOTEL_CARD_XPATH = "(//div[@data-testid='property-card-container'])[1]";
     private WebElement hotelInTheList;
-    public int getScore() {
+    public double getScore() {
         return score;
     }
-    private int score;
+    private double score;
 
     public void chooseHotelReviewScore(int reviewNumber) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         String dynamicXpath = String.format(REVIEW_SCORE_XPATH, reviewNumber);
         driver.findElement(By.xpath(dynamicXpath)).click();
+        try {
+            FileHandler.copy(((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE), new File("screenshot.png"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .ignoring(NoSuchElementException.class)
                 .ignoring(StaleElementReferenceException.class)
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(SELECTED_REVIEW_TAB_XPATH)));
+                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(String.format(SELECTED_REVIEW_TAB_CSS, reviewNumber))));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
     }
 
     public void openSortingDropDown() {
@@ -46,9 +61,14 @@ public class BookingHotelsPage {
         driver.findElement(By.xpath(FROM_HIGH_TO_LOW_SORTING_OPTION_XPATH)).click();
     }
 
-    public int findHotelReviewScore() {
+    public double findHotelReviewScore() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         String scoreText = driver.findElement(By.xpath(REVIEW_SCORE_CARD_XPATH)).getText();
-        score = scoreText.indexOf('.');
+        score = Double.parseDouble(scoreText.substring(0, scoreText.indexOf('\n')));
         return score;
     }
 

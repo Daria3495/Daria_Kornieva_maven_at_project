@@ -30,7 +30,7 @@ public class BookingTestsJunit extends BaseTestsJunit {
         bookingHotelsPage.openSortingDropDown();
         bookingHotelsPage.chooseSortingOption();
         bookingHotelsPage.findHotelReviewScore();
-        Assert.assertEquals("Hotel score is less than 6", true, bookingHotelsPage.getScore() > 6);
+        Assert.assertEquals("Hotel score is less than 6", bookingHotelsPage.getScore() > 6.0, bookingHotelsPage.getScore());
     }
 
     @Test
