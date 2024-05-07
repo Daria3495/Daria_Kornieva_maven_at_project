@@ -69,5 +69,15 @@ public class BookingTestsJunit extends BaseTestsJunit {
         Assert.assertEquals("Text is not 'Select your currency'","Select your currency" ,mainPage.checkCurrencyTooltip().getText());
     }
 
+    @Test
+    public void bookHotelInMadrid() {
+        mainPage.enterValueToWhereToGoField("Madrid");
+        mainPage.fillStartDateField(DateCreatorUtil.calculateStartDate(30));
+        mainPage.fillEndDateField(DateCreatorUtil.calculateEndDate(35));
+        mainPage.clickSearchButton();
+        bookingHotelsPage.chooseFavouriteIcon();
+//        bookingHotelsPage.chooseFavouriteIcon(74);
+    }
+
 }
 
