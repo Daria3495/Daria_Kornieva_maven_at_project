@@ -1,6 +1,8 @@
 package automation.pages;
 
 import automation.driver.Driver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 public class DemoQaPage {
 
-
+    private static final Logger LOGGER = LogManager.getLogger(DemoQaPage.class);
     public static final String VALUE_DROPDOWN_ID = "withOptGroup";
     public static final String GROUP_OPTION_XPATH = "//*[contains(text(),'Group %s, option %s')]";
     public static final String SELECT_ONE_DROPDOWN_ID = "selectOne";
@@ -48,13 +50,16 @@ public class DemoQaPage {
 
     public DemoQaPage() {
         driver.get("https://demoqa.com/select-menu");
+        LOGGER.info("Demo qa page is not opened");
     }
 
     public void chooseValueFromFirstDropDown(int groupNumber, int optionNumber) {
         elementFirstDropdown = driver.findElement(By.id(VALUE_DROPDOWN_ID));
         elementFirstDropdown.click();
+        LOGGER.info("{} Group number is not chosen", groupNumber);
         String groupDynamicXpath = String.format(GROUP_OPTION_XPATH, groupNumber, optionNumber);
         driver.findElement(By.xpath(groupDynamicXpath)).click();
+        LOGGER.info("{} option number is not chosen", optionNumber);
         textInFirstDropDown = elementFirstDropdown.getText();
     }
 
@@ -77,17 +82,21 @@ public class DemoQaPage {
 
     public void clickAnywhereToHideDropdown() {
         driver.findElement(By.id(SELECT_MENU_CONTAINER_ID)).click();
+        LOGGER.info("Drop-down is not skipped since click on the page is not worked");
     }
 
     public void scrollToElement() {
         multiSelectorDropdown = driver.findElement(By.xpath(MULTISELECT_DROPDOWN_XPATH));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",multiSelectorDropdown);
+        LOGGER.info("Scroll to element {} is not worked", multiSelectorDropdown);
     }
 
     public void chooseColorFromMultiSelectDropdown(String color) {
         multiSelectorDropdown.click();
+        LOGGER.info("Multiselector drop down is not found");
         String multiselectDynamicXpath = String.format(SELECT_MULTISELECT_COLOR_XPATH, color);
         driver.findElement(By.xpath(multiselectDynamicXpath)).click();
+        LOGGER.info("{} color is not chosen", color);
 
 //        multiSelectorDropdown.click();
 //        Select select = new Select(multiSelectorDropdown);
@@ -100,6 +109,7 @@ public class DemoQaPage {
         String carDynamicXpath = String.format(CAR_XPATH, car);
         elementCar = driver.findElement(By.xpath(carDynamicXpath));
         elementCar.click();
+        LOGGER.info("Car {} is not found", car);
         textInCarDropdown = elementCar.getText();
     }
 
