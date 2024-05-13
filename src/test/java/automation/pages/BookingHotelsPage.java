@@ -25,6 +25,8 @@ public class BookingHotelsPage {
     public static final String FROM_HIGH_TO_LOW_SORTING_OPTION_XPATH = "//span[contains(.,'Property rating (low to high)')]";
     public static final String REVIEW_SCORE_CARD_XPATH = "(//div[@data-testid='property-card-container']//div[@data-testid='review-score'])[1]";
     public static final String HOTEL_CARD_XPATH = "(//div[@data-testid='property-card-container'])[1]";
+    public static final String FAVOURITE_ICON_XPATH ="(//button[@data-testid='wishlist-button'])[74]";
+    public static final String FOOTER_PART_XPATH = "newsletter_button_footer";
     private WebElement hotelInTheList;
     public double getScore() {
         return score;
@@ -97,5 +99,23 @@ public class BookingHotelsPage {
         LOGGER.info("Card background is not highlighted");
         ((JavascriptExecutor) driver).executeScript("arguments[0].style.color = 'red'", hotelInTheList);
         LOGGER.info("Card text is not highlighted");
+    }
+// TODO не работает скрол
+    public void chooseFavouriteIcon() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+//        new WebDriverWait(driver, Duration.ofSeconds(20))
+//                .until(drv -> drv.findElement(By.xpath(FAVOURITE_ICON_XPATH))).click();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        WebElement favouriteIcon = driver.findElement(By.xpath(FAVOURITE_ICON_XPATH));
+        WebElement footer = driver.findElement(By.id(FOOTER_PART_XPATH));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",footer);
+        favouriteIcon.click();
+
     }
 }

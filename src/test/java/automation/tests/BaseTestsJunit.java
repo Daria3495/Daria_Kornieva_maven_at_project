@@ -9,6 +9,6 @@ public class BaseTestsJunit {
     protected WebDriver driver;
     @After
     public void closeDriver() {
-        Driver.quitDriver();
+//        Driver.quitDriver();
     }
 }
