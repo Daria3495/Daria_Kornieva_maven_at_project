@@ -18,9 +18,9 @@ public class TutorialMainPage {
 
     public void openTutorialPage() {
         driver.get("https://www.w3schools.com/java/");
-        LOGGER.info("No redirection to Google main page");
+        LOGGER.info("Redirection to Google main page");
         driver.findElement(By.id("accept-choices")).click();
-        LOGGER.info("Cookies are not allowed");
+        LOGGER.info("Cookies are allowed");
     }
 
     public void copyTitleText() {
@@ -29,13 +29,13 @@ public class TutorialMainPage {
 //        KeyboardAction.copyText(title);
         Actions action = new Actions(driver);
         action.doubleClick(title);
-        LOGGER.info("Title is not highlighted by double click");
+        LOGGER.info("Title is highlighted by double click");
         action.keyDown(Keys.COMMAND);
-        LOGGER.info("Command button is not chosen down on keyboard");
+        LOGGER.info("Command button is chosen down on keyboard");
         action.sendKeys("c").clickAndHold();
-        LOGGER.info("'C' button is not chosen and hold on keyboard");
+        LOGGER.info("'C' button is chosen and hold on keyboard");
         action.keyUp(Keys.COMMAND);
-        LOGGER.info("Command button is not chosen up on keyboard");
+        LOGGER.info("Command button is chosen up on keyboard");
         action.build().perform();
     }
 

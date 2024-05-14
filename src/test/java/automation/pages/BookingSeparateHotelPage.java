@@ -27,13 +27,13 @@ public class BookingSeparateHotelPage {
 
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabs.size() - 1));
-        LOGGER.info("New tab is not opened");
+        LOGGER.info("New tab is opened");
     }
 
     public double findHotelReviewScore() {
         String scoreText = driver.findElement(By.xpath(REVIEW_SCORE_COMPONENT_XPATH)).getText();
         score = Double.parseDouble(scoreText.substring(0, scoreText.indexOf('\n')));
-        LOGGER.info("Hotel review score {} is not found", score);
+        LOGGER.info("Hotel review score {} is found", score);
         return score;
     }
 

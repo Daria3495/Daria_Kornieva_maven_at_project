@@ -17,30 +17,30 @@ public class GoogleMainPage {
     WebDriver driver = Driver.getWebDriver();
     public void openMainPage() {
         driver.get("https://www.google.com/?hl=en");
-        LOGGER.info("No redirection to Google main page");
+        LOGGER.info("Redirection to Google main page");
         driver.findElement(By.xpath(COOKIES_REJECT_BUTTON_XPATH)).click();
-        LOGGER.info("Cookies are not declined");
+        LOGGER.info("Cookies are declined");
     }
 
     public void chooseSearchField() {
         driver.findElement(By.xpath(SEARCH_FIELD_XPATH)).click();
-        LOGGER.info("Search field is not chosen");
+        LOGGER.info("Search field is chosen");
     }
 
     public void pasteTitleText() {
         Actions action = new Actions(driver);
         action.keyDown(Keys.COMMAND);
-        LOGGER.info("Command button is not chosen down on keyboard");
+        LOGGER.info("Command button is chosen down on keyboard");
         action.sendKeys("v").clickAndHold();
-        LOGGER.info("'V' button is not chosen and hold on keyboard");
+        LOGGER.info("'V' button is chosen and hold on keyboard");
         action.keyUp(Keys.COMMAND);
-        LOGGER.info("Command button is not chosen up on keyboard");
+        LOGGER.info("Command button is chosen up on keyboard");
         action.build().perform();
     }
 
     public void enterKeyboard() {
         Actions action = new Actions(driver);
         action.sendKeys(Keys.ENTER);
-        LOGGER.info("Enter button is not chosen on keyboard");
+        LOGGER.info("Enter button is chosen on keyboard");
     }
 }

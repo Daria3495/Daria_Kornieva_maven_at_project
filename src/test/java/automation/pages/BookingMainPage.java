@@ -28,37 +28,37 @@ public class BookingMainPage {
     public static final String CURRENCY_TOOLTIP_TEXT_XPATH ="//div[contains(text(),'Select your currency')]";
     public BookingMainPage() {
         driver.get("https://booking.com");
-        LOGGER.info("No redirection to Booking main page");
+        LOGGER.info("Redirection to Booking main page");
         driver.findElement(By.id("onetrust-reject-all-handler")).click();
-        LOGGER.info("Cookies alert is not skipped");
+        LOGGER.info("Cookies alert is skipped");
 
         List<WebElement> signInAlert = driver.findElements(By.xpath("//button[@aria-label='Dismiss sign-in info.']"));
         if (!signInAlert.isEmpty()) {
             signInAlert.get(0).click();
         }
-        LOGGER.info("Sign in alert is not displayed");
+        LOGGER.info("Sign in alert is displayed");
     }
 
     public void enterValueToWhereToGoField(String city) {
         driver.findElement(By.xpath(WHERE_TO_GO_FIELD_XPATH)).sendKeys(city);
-        LOGGER.info("City value of {} is not entered to 'Where to go field'", city);
+        LOGGER.info("City value of {} not entered to 'Where to go field'", city);
     }
 
     public void fillStartDateField(String date) {
         driver.findElement(By.xpath(START_DATE_FIELD_XPATH)).click();
-        LOGGER.info("Date option is not found");
+        LOGGER.info("Date option is found");
         driver.findElement(By.xpath(String.format(CALENDAR_FIELD_XPATH, date))).click();
-        LOGGER.info("Start date is not filled with date {}", date);
+        LOGGER.info("Start date is filled with date {}", date);
     }
 
     public void fillEndDateField(String date) {
         driver.findElement(By.xpath(String.format(CALENDAR_FIELD_XPATH, date))).click();
-        LOGGER.info("End date is not filled with date {}", date);
+        LOGGER.info("End date is filled with date {}", date);
     }
 
     public void chooseAdditionalFilters() {
         driver.findElement(By.xpath(ADDTIONAL_FILTERS_BUTTON_XPATH)).click();
-        LOGGER.info("Additional filters option is not opened");
+        LOGGER.info("Additional filters option is opened");
     }
 
     public void addAdultsQuantity(int peopleQuantity) {
@@ -66,7 +66,7 @@ public class BookingMainPage {
             driver.findElement
                     (By.xpath(ADULTS_QUANTITY_BUTTON_XPATH)).click();
         }
-        LOGGER.info("Incorrect people quantity {} are added to the field", peopleQuantity);
+        LOGGER.info("People quantity {} are added to the field", peopleQuantity);
     }
 
     public void addRoomQuantity(int roomQuantity) {
@@ -74,40 +74,40 @@ public class BookingMainPage {
             driver.findElement(By.xpath(ROOM_QUANTITY_BUTTON_XPATH))
                     .click();
         }
-        LOGGER.info("Incorrect room quantity {} are added to the field", roomQuantity);
+        LOGGER.info("Room quantity {} are added to the field", roomQuantity);
     }
 
     public void clickDoneButton() {
         driver.findElement(By.xpath(DONE_BUTTON_XPATH)).click();
-        LOGGER.info("Done button is not chosen");
+        LOGGER.info("Done button is chosen");
     }
 
     public void clickSearchButton() {
         driver.findElement(By.xpath(SEARCH_BUTTON_XPATH)).click();
-        LOGGER.info("Search button is not chosen");
+        LOGGER.info("Search button is chosen");
     }
 
     public WebElement checkLanguageTooltip() {
         WebElement languageIcon = driver.findElement(By.xpath(LANGUAGE_TOOLTIP_ICON_XPATH));
-        LOGGER.info("Language tooltip icon is not found");
+        LOGGER.info("Language tooltip icon is found");
         Actions actions = new Actions(driver);
         actions.moveToElement(languageIcon);
-        LOGGER.info("Cursor is not moved to Language tooltip button");
+        LOGGER.info("Cursor is moved to Language tooltip button");
         actions.build().perform();
         WebElement languageTooltipText = driver.findElement(By.xpath(LANGUAGE_TOOLTIP_TEXT_XPATH));
-        LOGGER.info("Incorrect text is displayed for Language tooltip");
+        LOGGER.info("Text is displayed for Language tooltip");
         return languageTooltipText;
     }
 
     public WebElement checkCurrencyTooltip() {
         WebElement currencyIcon = driver.findElement(By.xpath(CURRENCY_TOOLTIP_ICON_XPATH));
-        LOGGER.info("Currency tooltip icon is not found");
+        LOGGER.info("Currency tooltip icon is found");
         Actions actions = new Actions(driver);
         actions.moveToElement(currencyIcon);
-        LOGGER.info("Cursor is not moved to Currency tooltip button");
+        LOGGER.info("Cursor is moved to Currency tooltip button");
         actions.build().perform();
         WebElement currencyTooltipText = driver.findElement(By.xpath(CURRENCY_TOOLTIP_TEXT_XPATH));
-        LOGGER.info("Incorrect text is displayed for Currency tooltip");
+        LOGGER.info("Text is displayed for Currency tooltip");
         return currencyTooltipText;
     }
 

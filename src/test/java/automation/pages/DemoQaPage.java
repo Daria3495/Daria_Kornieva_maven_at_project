@@ -50,24 +50,26 @@ public class DemoQaPage {
 
     public DemoQaPage() {
         driver.get("https://demoqa.com/select-menu");
-        LOGGER.info("Demo qa page is not opened");
+        LOGGER.info("Demo qa page is opened");
     }
 
     public void chooseValueFromFirstDropDown(int groupNumber, int optionNumber) {
         elementFirstDropdown = driver.findElement(By.id(VALUE_DROPDOWN_ID));
         elementFirstDropdown.click();
-        LOGGER.info("{} Group number is not chosen", groupNumber);
+        LOGGER.info("{} Group number is chosen", groupNumber);
         String groupDynamicXpath = String.format(GROUP_OPTION_XPATH, groupNumber, optionNumber);
         driver.findElement(By.xpath(groupDynamicXpath)).click();
-        LOGGER.info("{} option number is not chosen", optionNumber);
+        LOGGER.info("{} option number is chosen", optionNumber);
         textInFirstDropDown = elementFirstDropdown.getText();
     }
 
     public void chooseValueFromSelectOneDropDown(String oneValue) {
         elementSelectOneDropdown = driver.findElement(By.id(SELECT_ONE_DROPDOWN_ID));
         elementSelectOneDropdown.click();
+        LOGGER.info("Drop-down is not skipped since click on the page is worked");
         String oneDynamicXpath = String.format(SELECT_ONE_VALUE_XPATH, oneValue);
         driver.findElement(By.xpath(oneDynamicXpath)).click();
+        LOGGER.info("Value is selected from dropdown");
         textInSelectOneDropdown = elementSelectOneDropdown.getText();
     }
 
@@ -75,28 +77,30 @@ public class DemoQaPage {
     public void chooseValueFromOldSelectMenu(String color) {
         driver.findElement(By.id(OLD_SELECT_MENU_DROPDOWN_ID));
         String oldDynamicXpath = String.format(OLD_SELECT_MENU_VALUE_XPATH, color);
+        LOGGER.info("Color drop-down is not skipped since click on the page is worked");
         elementOldDropdown = driver.findElement(By.xpath(oldDynamicXpath));
         elementOldDropdown.click();
+        LOGGER.info("Value is selected from dropdown");
         textInOldDropdown = elementOldDropdown.getText();
     }
 
     public void clickAnywhereToHideDropdown() {
         driver.findElement(By.id(SELECT_MENU_CONTAINER_ID)).click();
-        LOGGER.info("Drop-down is not skipped since click on the page is not worked");
+        LOGGER.info("Drop-down is skipped since click on the page is worked");
     }
 
     public void scrollToElement() {
         multiSelectorDropdown = driver.findElement(By.xpath(MULTISELECT_DROPDOWN_XPATH));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",multiSelectorDropdown);
-        LOGGER.info("Scroll to element {} is not worked", multiSelectorDropdown);
+        LOGGER.info("Scroll to element {} is worked", multiSelectorDropdown);
     }
 
     public void chooseColorFromMultiSelectDropdown(String color) {
         multiSelectorDropdown.click();
-        LOGGER.info("Multiselector drop down is not found");
+        LOGGER.info("Multiselector drop down is found");
         String multiselectDynamicXpath = String.format(SELECT_MULTISELECT_COLOR_XPATH, color);
         driver.findElement(By.xpath(multiselectDynamicXpath)).click();
-        LOGGER.info("{} color is not chosen", color);
+        LOGGER.info("{} color is chosen", color);
 
 //        multiSelectorDropdown.click();
 //        Select select = new Select(multiSelectorDropdown);
@@ -109,7 +113,7 @@ public class DemoQaPage {
         String carDynamicXpath = String.format(CAR_XPATH, car);
         elementCar = driver.findElement(By.xpath(carDynamicXpath));
         elementCar.click();
-        LOGGER.info("Car {} is not found", car);
+        LOGGER.info("Car {} is found", car);
         textInCarDropdown = elementCar.getText();
     }
 

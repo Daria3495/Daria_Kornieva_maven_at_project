@@ -51,7 +51,7 @@ public class BookingHotelsPage {
                 .ignoring(NoSuchElementException.class)
                 .ignoring(StaleElementReferenceException.class)
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(String.format(SELECTED_REVIEW_TAB_CSS, reviewNumber))));
-        LOGGER.info("Selected review number {} is not chosen", reviewNumber);
+        LOGGER.info("Selected review number {} is chosen", reviewNumber);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
     }
@@ -60,7 +60,7 @@ public class BookingHotelsPage {
         WebElement sort = driver.findElement(By.xpath(SORTING_DROPDOWN_XPATH));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",sort);
         sort.click();
-        LOGGER.info("Sorting drop-down option is not chosen");
+        LOGGER.info("Sorting drop-down option is chosen");
     }
 
 //        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);",sort);
@@ -68,7 +68,7 @@ public class BookingHotelsPage {
 
     public void chooseSortingOption() {
         driver.findElement(By.xpath(FROM_HIGH_TO_LOW_SORTING_OPTION_XPATH)).click();
-        LOGGER.info("Sorting option from filtering dop-down is not chosen");
+        LOGGER.info("Sorting option from filtering dop-down is chosen");
     }
 
     public double findHotelReviewScore() {
@@ -79,26 +79,26 @@ public class BookingHotelsPage {
         }
         String scoreText = driver.findElement(By.xpath(REVIEW_SCORE_CARD_XPATH)).getText();
         score = Double.parseDouble(scoreText.substring(0, scoreText.indexOf('\n')));
-        LOGGER.info("Hotel review score {} is not found", score);
+        LOGGER.info("Hotel review score {} is found", score);
         return score;
     }
 
     public void chooseHotelFromTheList() {
         driver.findElement(By.xpath(HOTEL_CARD_XPATH)).click();
-        LOGGER.info("Hotel card is not founded in the list");
+        LOGGER.info("Hotel card is founded in the list");
     }
 
     public void findHotelInTheList(int hotelNumber) {
         hotelInTheList = driver.findElement(By.xpath(String.format(HOTEL_CARD_IN_THE_LIST_XPATH, hotelNumber)));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", hotelInTheList);
-        LOGGER.info("Hotel card for {} hotel in the list is not founded", hotelNumber);
+        LOGGER.info("Hotel card for {} hotel in the list is founded", hotelNumber);
     }
 
     public void highlightHotelCard() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].style.backgroundColor = 'green'", hotelInTheList);
-        LOGGER.info("Card background is not highlighted");
+        LOGGER.info("Card background is highlighted");
         ((JavascriptExecutor) driver).executeScript("arguments[0].style.color = 'red'", hotelInTheList);
-        LOGGER.info("Card text is not highlighted");
+        LOGGER.info("Card text is highlighted");
     }
 // TODO не работает скрол
     public void chooseFavouriteIcon() {
