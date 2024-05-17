@@ -112,6 +112,13 @@
       <version>20240303</version>
     </dependency>
 
+    <dependency>
+      <groupId>io.appium</groupId>
+      <artifactId>java-client</artifactId>
+      <version>9.2.2</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>

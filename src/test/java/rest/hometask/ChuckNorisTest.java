@@ -19,15 +19,13 @@ public class ChuckNorisTest {
                 .setContentType(ContentType.JSON)
                 .log(LogDetail.ALL)
                 .build();
-        String searchString = RestAssured
+       String joke = RestAssured
                 .given()
                 .spec(requestSpecification)
                 .when()
                 .get()
                 .then()
-                .extract().body().asString();
-        JsonPath body = new JsonPath(searchString);
-        String joke = body.getString("value");
+               .extract().path("value");
         System.out.println("Chuck Noris joke: \n" +  joke);
     }
 }
